@@ -21,11 +21,12 @@ public class LoginAction {
 		this.senha = senha;
 	}
 
-	public String execute() {
+	public String logar() {
 		if (this.email.equals("teste@teste.com") && this.senha.equals("123")) {
 			return "SUCCESS";
 		} else {
 			return "ERROR";
 		}
 	}
+
 }

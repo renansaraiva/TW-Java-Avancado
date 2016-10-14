@@ -11,8 +11,8 @@
 <body>
 	<h1>Bem vindo ao teste do Struts2 do TreinaWeb</h1>
 	<s:form action="Login">
-		<s:textfield name="email" label="Nome de usuário: "></s:textfield>
-		<s:password name="senha" label="Senha: "></s:password>
+		<s:textfield name="email" label="Nome de usuário"></s:textfield>
+		<s:password name="senha" label="Senha"></s:password>
 		<s:submit />
 	</s:form>
 </body>

@@ -8,7 +8,7 @@
 			<result>pages/login.jsp</result>
 		</action>
 		
-		<action name="Login" class="br.com.treinaweb.teste.struts2.login.actions.LoginAction">
+		<action name="Login" class="br.com.treinaweb.teste.struts2.login.actions.LoginAction" method="logar">
 			<result name="SUCCESS">pages/sucesso.jsp</result>
 			<result name="ERROR">pages/erro.jsp</result>
 		</action>
