@@ -19,13 +19,18 @@
 				<td>ID do álbum</td>
 				<td>Nome do álbum</td>
 				<td>Ano do álbum</td>
+				<td>Ações</td>
 			</thead>
 			<tbody>
 				<s:iterator value="modelos">
 					<tr>
+						<s:url action="Alterar" var="urlAtualizar">
+							<s:param name="id" value="id"/>
+						</s:url>
 						<td><s:property value="id"/></td>
 						<td><s:property value="nome"/></td>
 						<td><s:property value="ano"/></td>
+						<td><s:a href="%{urlAtualizar}">Atualizar</s:a></td>
 					</tr>
 				</s:iterator>
 			</tbody>

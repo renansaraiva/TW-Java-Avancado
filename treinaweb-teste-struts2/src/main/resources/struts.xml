@@ -32,7 +32,21 @@
 		<action name="InserirAlbum"
 		    class="br.com.treinaweb.teste.struts2.controllers.impl.AlbumController"
 		    method="inserir">
-		    <result name="SUCCESS" type="redirectAction">ListarAlbuns</result>
+		    <result name="SUCCESS" type="redirectAction">/ListarAlbuns</result>
+		    <result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
+		<action name="Alterar"
+		    class="br.com.treinaweb.teste.struts2.controllers.impl.AlbumController"
+		    method="prepararAlterar">
+		    <result name="SUCCESS">pages/alterar.jsp</result>
+		    <result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
+		<action name="AlterarAlbum"
+		    class="br.com.treinaweb.teste.struts2.controllers.impl.AlbumController"
+		    method="alterar">
+		    <result name="SUCCESS" type="redirectAction">/ListarAlbuns</result>
 		    <result name="ERROR">pages/erro.jsp</result>
 		</action>
 	</package>

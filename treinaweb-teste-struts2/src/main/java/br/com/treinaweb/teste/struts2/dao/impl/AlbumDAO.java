@@ -42,12 +42,14 @@ public class AlbumDAO implements IDAOGenerico<Album, Integer> {
 		transacao.commit();
 		session.close();
 	}
-
+	
 	@Override
 	public void atualizar(Album modelo) {
 		SessionFactory sf = HibernateSessionFactoryUtils.getSessionFactory();
 		Session session = sf.openSession();
+		Transaction transacao = session.beginTransaction();
 		session.update(modelo);
+		transacao.commit();
 		session.close();
 	}
 

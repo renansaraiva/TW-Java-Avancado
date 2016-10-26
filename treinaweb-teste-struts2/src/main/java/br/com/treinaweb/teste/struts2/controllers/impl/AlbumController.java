@@ -39,11 +39,26 @@ public class AlbumController extends Controller<Album, Integer>{
 			return ERROR;
 		}
 	}
+	
+	@Override
+	public String prepararAlterar() {
+		try {
+			Album album = dao.porId(getId());
+			setModelo(album);
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
+	}
 
 	@Override
 	public String alterar() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			dao.atualizar(getModelo());
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
 	}
 
 	@Override
