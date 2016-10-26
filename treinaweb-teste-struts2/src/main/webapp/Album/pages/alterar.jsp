@@ -13,7 +13,7 @@
 	<br />
 	<br />
 	<s:form action="AlterarAlbum">
-		<s:hidden nome="modelo.id" />
+		<s:hidden name="modelo.id" />
 		<s:textfield label="Título do álbum" name="modelo.nome" />
 		<s:textfield label="Ano de lançamento" name="modelo.ano" />
 		<s:submit />
