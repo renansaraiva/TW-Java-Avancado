@@ -12,14 +12,22 @@ public class AlbumController extends Controller<Album, Integer>{
 
 	@Override
 	public String listar() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			this.setModelos(this.dao.todos());
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
 	}
 
 	@Override
 	public String detalhar() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			this.setModelo(dao.porId(this.getId()));
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
 	}
 
 	@Override

@@ -13,6 +13,7 @@ public abstract class Controller<M, K> {
 	
 	protected M modelo;
 	protected List<M> modelos;
+	protected K id;
 
 	public M getModelo() {
 		return modelo;
@@ -28,6 +29,14 @@ public abstract class Controller<M, K> {
 
 	public void setModelos(List<M> modelos) {
 		this.modelos = modelos;
+	}
+
+	public K getId() {
+		return id;
+	}
+
+	public void setId(K id) {
+		this.id = id;
 	}
 
 	public Controller(IDAOGenerico<M, K> dao) {
