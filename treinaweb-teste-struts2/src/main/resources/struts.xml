@@ -3,14 +3,27 @@
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
+    
 	<package name="teste" namespace="/Teste" extends="struts-default">
 		<action name="FazerLogin">
 			<result>pages/login.jsp</result>
 		</action>
-		
-		<action name="Login" class="br.com.treinaweb.teste.struts2.login.actions.LoginAction" method="logar">
+
+		<action name="Login"
+			class="br.com.treinaweb.teste.struts2.login.actions.LoginAction"
+			method="logar">
 			<result name="SUCCESS">pages/sucesso.jsp</result>
 			<result name="ERROR">pages/erro.jsp</result>
 		</action>
 	</package>
+	
+	<package name="albuns" namespace="/Album" extends="struts-default">
+		<action name="ListarAlbuns"
+			class="br.com.treinaweb.teste.struts2.controllers.impl.AlbumController"
+			method="listar">
+			<result name="SUCCESS">pages/listar.jsp</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+	</package>
+	
 </struts>

@@ -12,5 +12,6 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
+		<mapping class="br.com.treinaweb.teste.struts2.models.Album"/>
 	</session-factory>
 </hibernate-configuration>
