@@ -34,20 +34,26 @@ public class AlbumDAO implements IDAOGenerico<Album, Integer> {
 
 	@Override
 	public void inserir(Album modelo) {
-		// TODO Auto-generated method stub
-		
+		SessionFactory sf = HibernateSessionFactoryUtils.getSessionFactory();
+		Session session = sf.openSession();
+		session.save(modelo);
+		session.close();
 	}
 
 	@Override
 	public void atualizar(Album modelo) {
-		// TODO Auto-generated method stub
-		
+		SessionFactory sf = HibernateSessionFactoryUtils.getSessionFactory();
+		Session session = sf.openSession();
+		session.update(modelo);
+		session.close();
 	}
 
 	@Override
 	public void deletar(Album modelo) {
-		// TODO Auto-generated method stub
-		
+		SessionFactory sf = HibernateSessionFactoryUtils.getSessionFactory();
+		Session session = sf.openSession();
+		session.delete(modelo);
+		session.close();
 	}
 	
 	
