@@ -24,6 +24,17 @@
 			<result name="SUCCESS">pages/listar.jsp</result>
 			<result name="ERROR">pages/erro.jsp</result>
 		</action>
+		
+		<action name="Inserir">
+		    <result>pages/inserir.jsp</result>
+		</action>
+		
+		<action name="InserirAlbum"
+		    class="br.com.treinaweb.teste.struts2.controllers.impl.AlbumController"
+		    method="inserir">
+		    <result name="SUCCESS" type="redirectAction">ListarAlbuns</result>
+		    <result name="ERROR">pages/erro.jsp</result>
+		</action>
 	</package>
 	
 </struts>

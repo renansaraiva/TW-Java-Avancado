@@ -32,8 +32,12 @@ public class AlbumController extends Controller<Album, Integer>{
 
 	@Override
 	public String inserir() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			dao.inserir(getModelo());
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
 	}
 
 	@Override

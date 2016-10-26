@@ -11,14 +11,14 @@
 <body>
 	<h2>Lista de álbuns</h2>
 	<br />
+	<a href="/TreinaWebStruts2Teste/Album/Inserir">Inserir Album</a>
+	<br />
 	<s:if test="modelos.size() > 0">
 		<table style="border: 1px">
 			<thead>
-				<th>
-					<td>ID do álbum</td>
-					<td>Nome do álbum</td>
-					<td>Ano do álbum</td>
-				</th>
+				<td>ID do álbum</td>
+				<td>Nome do álbum</td>
+				<td>Ano do álbum</td>
 			</thead>
 			<tbody>
 				<s:iterator value="modelos">

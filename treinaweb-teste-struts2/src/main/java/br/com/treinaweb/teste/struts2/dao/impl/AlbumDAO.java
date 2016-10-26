@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 import br.com.treinaweb.teste.struts2.dao.interfaces.IDAOGenerico;
 import br.com.treinaweb.teste.struts2.hibernate.util.HibernateSessionFactoryUtils;
@@ -36,7 +37,9 @@ public class AlbumDAO implements IDAOGenerico<Album, Integer> {
 	public void inserir(Album modelo) {
 		SessionFactory sf = HibernateSessionFactoryUtils.getSessionFactory();
 		Session session = sf.openSession();
+		Transaction transacao = session.beginTransaction();
 		session.save(modelo);
+		transacao.commit();
 		session.close();
 	}
 
