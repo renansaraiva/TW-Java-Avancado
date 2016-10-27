@@ -27,10 +27,15 @@
 						<s:url action="Alterar" var="urlAtualizar">
 							<s:param name="id" value="id"/>
 						</s:url>
+						<s:url action="Excluir" var="urlExcluir">
+							<s:param name="id" value="id"/>
+						</s:url>
 						<td><s:property value="id"/></td>
 						<td><s:property value="nome"/></td>
 						<td><s:property value="ano"/></td>
-						<td><s:a href="%{urlAtualizar}">Atualizar</s:a></td>
+						<td><s:a href="%{urlAtualizar}">Atualizar</s:a> |
+							<s:a href="%{urlExcluir}">Excluir</s:a>
+						</td>
 					</tr>
 				</s:iterator>
 			</tbody>

@@ -63,8 +63,13 @@ public class AlbumController extends Controller<Album, Integer>{
 
 	@Override
 	public String deletar() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			Album album = dao.porId(getId());
+			dao.deletar(album);
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
 	}
 	
 }

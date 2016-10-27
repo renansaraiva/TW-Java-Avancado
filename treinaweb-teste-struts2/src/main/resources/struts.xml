@@ -49,6 +49,13 @@
 		    <result name="SUCCESS" type="redirectAction">/ListarAlbuns</result>
 		    <result name="ERROR">pages/erro.jsp</result>
 		</action>
+		
+		<action name="Excluir"
+		    class="br.com.treinaweb.teste.struts2.controllers.impl.AlbumController"
+		    method="deletar">
+		    <result name="SUCCESS" type="redirectAction">/ListarAlbuns</result>
+		    <result name="ERROR">pages/erro.jsp</result>
+		</action>
 	</package>
 	
 </struts>
