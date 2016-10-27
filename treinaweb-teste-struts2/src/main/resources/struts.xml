@@ -56,6 +56,13 @@
 		    <result name="SUCCESS" type="redirectAction">/ListarAlbuns</result>
 		    <result name="ERROR">pages/erro.jsp</result>
 		</action>
+		
+		<action name="Detalhar"
+			class="br.com.treinaweb.teste.struts2.controllers.impl.AlbumController"
+			method="detalhar">
+			<result name="SUCCESS">pages/detalhar.jsp</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
 	</package>
 	
 </struts>
