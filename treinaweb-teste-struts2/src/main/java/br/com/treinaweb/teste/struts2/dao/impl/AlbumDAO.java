@@ -120,6 +120,7 @@ public class AlbumDAO implements IDAOGenerico<Album, Integer> {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TreinaWebTesteJPA");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
+		modelo = entityManager.merge(modelo);
 		entityManager.remove(modelo);
 		entityManager.getTransaction().commit();
 		entityManager.close();
