@@ -4,8 +4,11 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +24,10 @@ public class Musica implements Serializable {
 	
 	@Column(name = "MUS_NOME")
 	private String nome;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "ALB_ID")
+	private Album album;
 
 	public int getId() {
 		return id;
@@ -38,4 +45,13 @@ public class Musica implements Serializable {
 		this.nome = nome;
 	}
 
+	public Album getAlbum() {
+		return album;
+	}
+
+	public void setAlbum(Album album) {
+		this.album = album;
+	}
+
+	
 }

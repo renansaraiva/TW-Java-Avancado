@@ -7,6 +7,7 @@
     <persistence-unit name="TreinaWebTesteJPA">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <class>br.com.treinaweb.teste.struts2.models.Album</class>
+        <class>br.com.treinaweb.teste.struts2.models.Musica</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/treinaweb_albuns"/>
