@@ -1,10 +1,36 @@
 package br.com.treinaweb.teste.struts2.controllers.impl;
 
+import java.util.List;
+
 import br.com.treinaweb.teste.struts2.controllers.interfaces.Controller;
+import br.com.treinaweb.teste.struts2.dao.impl.AlbumDAO;
 import br.com.treinaweb.teste.struts2.dao.impl.MusicaDAO;
+import br.com.treinaweb.teste.struts2.dao.interfaces.IDAOGenerico;
+import br.com.treinaweb.teste.struts2.models.Album;
 import br.com.treinaweb.teste.struts2.models.Musica;
 
-public class MusicaController extends Controller<Musica, Integer>{
+public class MusicaController extends Controller<Musica, Integer> {
+
+	private List<Album> albuns;
+	private int albumId;
+	
+	private IDAOGenerico<Album, Integer> albumDAO = new AlbumDAO();
+
+	public List<Album> getAlbuns() {
+		return albuns;
+	}
+
+	public void setAlbuns(List<Album> albuns) {
+		this.albuns = albuns;
+	}
+
+	public int getAlbumId() {
+		return albumId;
+	}
+
+	public void setAlbumId(int albumId) {
+		this.albumId = albumId;
+	}
 
 	public MusicaController() {
 		super(new MusicaDAO());
@@ -29,9 +55,19 @@ public class MusicaController extends Controller<Musica, Integer>{
 			return ERROR;
 		}
 	}
+	
+	public String prepararInserir() {
+		try {
+			albuns = albumDAO.todos();
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
+	}
 
 	@Override
 	public String inserir() {
+		
 		try {
 			dao.inserir(getModelo());
 			return SUCCESS;
@@ -39,7 +75,7 @@ public class MusicaController extends Controller<Musica, Integer>{
 			return ERROR;
 		}
 	}
-	
+
 	@Override
 	public String prepararAlterar() {
 		try {
@@ -71,5 +107,5 @@ public class MusicaController extends Controller<Musica, Integer>{
 			return ERROR;
 		}
 	}
-	
+
 }
