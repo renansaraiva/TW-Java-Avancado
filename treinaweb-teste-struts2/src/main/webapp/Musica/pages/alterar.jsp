@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
+<title>Alteração de música</title>
 </head>
 <body>
-	<h2>Alteração de álbum</h2>
+	<h2>Alteração de música</h2>
 	<br />
 	<br />
-	<s:form action="AlterarAlbum">
+	<s:form action="AlterarMusica">
 		<s:hidden name="modelo.id" />
-		<s:textfield label="Título do álbum" name="modelo.nome" />
-		<s:textfield label="Ano de lançamento" name="modelo.ano" />
-		<s:submit />
+		<s:textfield label="Título da Música" name="modelo.nome" />
+		<s:select label="Álbum" headerKey="-1"
+			headerValue="Selectione um álbum..." list="albuns" name="albumId"
+			listKey="id" listValue="nome"/>
+		<s:submit value="Alterar"/>
 	</s:form>
 </body>
 </html>

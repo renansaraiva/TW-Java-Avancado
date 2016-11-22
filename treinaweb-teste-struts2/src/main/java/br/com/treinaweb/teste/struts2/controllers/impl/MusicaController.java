@@ -83,6 +83,8 @@ public class MusicaController extends Controller<Musica, Integer> {
 		try {
 			Musica musica = dao.porId(getId());
 			setModelo(musica);
+			albuns = albumDAO.todos();
+			setAlbumId(musica.getAlbum().getId());
 			return SUCCESS;
 		} catch (Exception e) {
 			return ERROR;
@@ -92,7 +94,10 @@ public class MusicaController extends Controller<Musica, Integer> {
 	@Override
 	public String alterar() {
 		try {
-			dao.atualizar(getModelo());
+			Musica musica = getModelo();
+			Album albumSelecionado = albumDAO.porId(getAlbumId());
+			musica.setAlbum(albumSelecionado);
+			dao.atualizar(musica);
 			return SUCCESS;
 		} catch (Exception e) {
 			return ERROR;

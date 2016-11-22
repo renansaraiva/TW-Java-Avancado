@@ -94,7 +94,7 @@
 		    <result name="ERROR">pages/erro.jsp</result>
 		</action>
 		
-		<action name="AlterarAlbum"
+		<action name="AlterarMusica"
 		    class="br.com.treinaweb.teste.struts2.controllers.impl.MusicaController"
 		    method="alterar">
 		    <result name="SUCCESS" type="redirectAction">/ListarMusicas</result>
