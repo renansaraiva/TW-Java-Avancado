@@ -15,7 +15,7 @@
 	<s:form action="InserirAlbum">
 		<s:textfield label="Título do álbum" name="modelo.nome"/>
 		<s:textfield label="Ano de lançamento" name="modelo.ano"/>
-		<s:submit />
+		<s:submit value="Inserir"/>
 	</s:form>
 </body>
 </html>

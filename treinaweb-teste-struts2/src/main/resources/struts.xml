@@ -65,4 +65,55 @@
 		</action>
 	</package>
 	
+	<package name="musicas" namespace="/Musica" extends="struts-default">
+		<action name="ListarMusicas"
+			class="br.com.treinaweb.teste.struts2.controllers.impl.MusicaController"
+			method="listar">
+			<result name="SUCCESS">pages/listar.jsp</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
+		<action name="Inserir"
+		    class="br.com.treinaweb.teste.struts2.controllers.impl.MusicaController"
+		    method="prepararInserir">
+		    <result name="SUCCESS">pages/inserir.jsp</result>
+		    <result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
+		<action name="InserirMusica"
+		    class="br.com.treinaweb.teste.struts2.controllers.impl.MusicaController"
+		    method="inserir">
+		    <result name="SUCCESS" type="redirectAction">/ListarMusicas</result>
+		    <result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
+		<action name="Alterar"
+		    class="br.com.treinaweb.teste.struts2.controllers.impl.MusicaController"
+		    method="prepararAlterar">
+		    <result name="SUCCESS">pages/alterar.jsp</result>
+		    <result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
+		<action name="AlterarAlbum"
+		    class="br.com.treinaweb.teste.struts2.controllers.impl.MusicaController"
+		    method="alterar">
+		    <result name="SUCCESS" type="redirectAction">/ListarMusicas</result>
+		    <result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
+		<action name="Excluir"
+		    class="br.com.treinaweb.teste.struts2.controllers.impl.MusicaController"
+		    method="deletar">
+		    <result name="SUCCESS" type="redirectAction">/ListarMusicas</result>
+		    <result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
+		<action name="Detalhar"
+			class="br.com.treinaweb.teste.struts2.controllers.impl.MusicaController"
+			method="detalhar">
+			<result name="SUCCESS">pages/detalhar.jsp</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+	</package>
+	
 </struts>

@@ -67,9 +67,11 @@ public class MusicaController extends Controller<Musica, Integer> {
 
 	@Override
 	public String inserir() {
-		
 		try {
-			dao.inserir(getModelo());
+			Musica musica = getModelo();
+			Album albumSelecionado = albumDAO.porId(getAlbumId());
+			musica.setAlbum(albumSelecionado);
+			dao.inserir(musica);
 			return SUCCESS;
 		} catch (Exception e) {
 			return ERROR;

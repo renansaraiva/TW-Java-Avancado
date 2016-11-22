@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
+<title>Inserção de música</title>
 </head>
 <body>
 	<h2>Inserção de música</h2>
@@ -16,8 +16,8 @@
 		<s:textfield label="Título da Música" name="modelo.nome" />
 		<s:select label="Álbum" headerKey="-1"
 			headerValue="Selectione um álbum..." list="albuns" name="albumId"
-			listKey="nome" listValue="id" />
-		<s:submit />
+			listKey="id" listValue="nome"/>
+		<s:submit value="Inserir"/>
 	</s:form>
 </body>
 </html>
