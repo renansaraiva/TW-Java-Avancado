@@ -29,7 +29,7 @@ public class Album implements Serializable{
 	@Column(name = "ALB_ANO_LANCAMENTO")
 	private int ano;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "", orphanRemoval = true)
 	private List<Musica> musicas;
 
 	public int getId() {

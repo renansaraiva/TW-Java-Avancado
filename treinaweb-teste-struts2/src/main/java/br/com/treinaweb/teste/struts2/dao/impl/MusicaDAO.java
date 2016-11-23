@@ -120,12 +120,12 @@ public class MusicaDAO implements IDAOGenerico<Musica, Integer> {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TreinaWebTesteJPA");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
-		modelo = entityManager.merge(modelo);
+		modelo = entityManager.find(Musica.class, modelo.getId());
+		modelo.setAlbum(null);
 		entityManager.remove(modelo);
 		entityManager.getTransaction().commit();
 		entityManager.close();
 		entityManagerFactory.close();
 	}
-	
 	
 }
